@@ -226,11 +226,13 @@ if (params.part == 1) {
       """
       mkdir -p ${params.project}/tmp/ ${params.project}/bin/
       cnest.py --debug step2 --project ${params.project} --sample ${name} --input ${file_path} --fasta genome.fa --fast
+      rm $(realpath ${file_path})
       """
     else
       """
       mkdir -p ${params.project}/tmp/ ${params.project}/bin/
       cnest.py step2 --project ${params.project} --sample ${name} --input ${file_path} --fasta genome.fa --fast
+      rm $(realpath ${file_path})
       """
   }
 }
